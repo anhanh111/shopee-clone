@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hồ Sơ Của Tôi - Shopee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans flex items-center justify-center min-h-screen">
+
+  <!-- Wrapper giữa màn hình -->
+  <div class="bg-white max-w-5xl w-full mx-auto my-12 rounded-xl shadow-lg overflow-hidden">
+
+    <div class="flex">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white border-r p-4">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-xl text-gray-500">
+            👤
+          </div>
+          <div>
+            <div class="font-semibold">trnqucthng152</div>
+            <a href="#" class="text-sm text-blue-500">Sửa Hồ Sơ</a>
+          </div>
+        </div>
+        <nav class="space-y-2 text-sm">
+          <div class="font-bold text-gray-800">Tài Khoản Của Tôi</div>
+          <ul class="pl-3 space-y-1">
+            <li class="text-orange-500 font-medium">Hồ Sơ</li>
+            <li class="text-gray-700">Ngân Hàng</li>
+            <li class="text-gray-700">Địa Chỉ</li>
+            <li class="text-gray-700">Đổi Mật Khẩu</li>
+            <li class="text-gray-700">Cài Đặt Thông Báo</li>
+            <li class="text-gray-700">Những Thiết Lập Riêng Tư</li>
+          </ul>
+          <div class="font-bold mt-4 text-gray-800">Đơn Mua</div>
+          <div class="font-bold mt-4 text-gray-800">Kho Voucher</div>
+          <div class="font-bold mt-4 text-gray-800">Shopee Xu</div>
+          <div class="font-bold mt-4 text-gray-800 text-red-500">6.6 Siêu Sale Giữa Năm <span class="bg-red-500 text-white text-xs px-1 rounded">NEW</span></div>
+        </nav>
+      </aside>
+
+      <!-- Main content -->
+      <main class="flex-1 bg-white p-8">
+        <h1 class="text-2xl font-semibold mb-2">Hồ Sơ Của Tôi</h1>
+        <p class="text-gray-500 mb-6">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+
+        <form class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Form Fields -->
+          <div class="md:col-span-2 space-y-4">
+            <div>
+              <label class="block text-sm font-medium">Tên đăng nhập</label>
+              <input type="text" value="trnqucthng152" disabled class="w-full mt-1 border border-gray-300 rounded px-3 py-2 bg-gray-100" />
+              <p class="text-xs text-gray-500 mt-1">Tên Đăng nhập chỉ có thể thay đổi một lần.</p>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium">Tên</label>
+              <input type="text" value="winsep" class="w-full mt-1 border border-gray-300 rounded px-3 py-2" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium">Email</label>
+              <div class="flex items-center space-x-2">
+                <span class="text-gray-700">wi********@gmail.com</span>
+                <a href="#" class="text-blue-500 text-sm">Thay Đổi</a>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium">Số điện thoại</label>
+              <div class="flex items-center space-x-2">
+                <span class="text-gray-700">********04</span>
+                <a href="#" class="text-blue-500 text-sm">Thay Đổi</a>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium">Giới tính</label>
+              <div class="flex items-center gap-6 mt-1">
+                <label class="flex items-center">
+                  <input type="radio" name="gender" checked class="mr-2" />
+                  Nam
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="gender" class="mr-2" />
+                  Nữ
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="gender" class="mr-2" />
+                  Khác
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium">Ngày sinh</label>
+              <div class="flex items-center space-x-2">
+                <span>**/**/2004</span>
+                <a href="#" class="text-blue-500 text-sm">Thay Đổi</a>
+              </div>
+            </div>
+
+            <button type="submit" class="bg-orange-500 text-white px-6 py-2 rounded mt-4 hover:bg-orange-600">Lưu</button>
+          </div>
+
+          <!-- Avatar Upload -->
+          <div class="flex flex-col items-center justify-start space-y-4">
+            <div class="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center text-3xl text-gray-400">👤</div>
+            <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">Chọn Ảnh</button>
+            <p class="text-xs text-gray-500 text-center">Dung lượng file tối đa 1 MB<br>Định dạng: .JPEG, .PNG</p>
+          </div>
+        </form>
+      </main>
+    </div>
+
+  </div>
+
+</body>
+</html>
