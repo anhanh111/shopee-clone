@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Giỏ Hàng Shopee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Top Header -->
+  <div class="bg-orange-600 text-white py-2 text-sm">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between">
+      <div>
+        <a href="#" class="mx-2">Kênh Người Bán</a>
+        <a href="#" class="mx-2">Tải ứng dụng</a>
+        <a href="#" class="mx-2">Kết Nối</a>
+      </div>
+      <div>
+        <a href="#" class="mx-2">Thông Báo</a>
+        <a href="#" class="mx-2">Hỗ Trợ</a>
+        <a href="#" class="mx-2">Tiếng Việt</a>
+        <a href="#" class="mx-2">trmqcthing152</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <div class="bg-white shadow-md py-4">
+    <div class="max-w-7xl mx-auto px-4 flex items-center">
+      <div class="flex items-center mr-5">
+        <img src="./assets/images/cart/shopee1950.jpg" class="w-20 h-30" alt="">
+        <span class="text-gray-500 ml-2 text-xl">| Giỏ Hàng</span>
+      </div>
+      <div class="flex-1 flex items-center border-2 border-orange-600 rounded">
+        <input type="text" placeholder="Freeship 0Đ mọi đơn*" class="w-full p-2 outline-none" />
+        <button class="bg-orange-600 text-white px-4 py-2 rounded">Tìm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Content -->
+  <div class="mt-5">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Cart Header -->
+      <div class="bg-white p-3 flex justify-between items-center font-bold border-b border-gray-200">
+        <span class="flex-1">Sản Phẩm</span>
+        <span class="w-24 text-center">Đơn Giá</span>
+        <span class="w-24 text-center">Số Lượng</span>
+        <span class="w-24 text-center">Số Tiền</span>
+        <span class="w-24 text-center">Thao Tác</span>
+      </div>
+
+      <!-- Shop Section -->
+      <div class="mt-5">
+        <!-- Shop Header -->
+        <div class="bg-white p-3 flex items-center border-b border-gray-200">
+          <input type="checkbox" class="mr-3" />
+          <img src="./assets/images/cart/valorant.png" alt="Shop Logo" class="w-8 h-8 mr-3" />
+          <span class="font-bold">LHTung Store</span>
+        </div>
+
+        <!-- Product Item 1 -->
+        <div class="bg-white p-3 flex items-center border-b border-gray-200">
+          <input type="checkbox" class="mr-3" />
+          <img src="./assets/images/cart/7c5e174d-a677-43a9-90fa-6962fef3f7b5.jpg" alt="Product" class="w-20 h-20 mr-3" />
+          <div class="flex-1">
+            <p>[SẴN GIÁO] Chuột không dây ATK A9 Dragonfly/ A9 Ultra/ A...</p>
+            <p class="text-gray-500">Phân Loại Hàng: X1 S.Đen</p>
+          </div>
+          <span class="w-24 text-center">₫715.000</span>
+          <div class="w-24 text-center flex justify-center items-center">
+            <button class="border px-2">-</button>
+            <span class="mx-2">1</span>
+            <button class="border px-2">+</button>
+          </div>
+          <span class="w-24 text-center text-orange-600">₫715.000</span>
+          <div class="w-24 text-center">
+            <a href="#" class="text-orange-600 mx-1">Sửa</a>
+            <a href="#" class="text-orange-600 mx-1">Xóa</a>
+          </div>
+        </div>
+
+        <!-- Product Item 2 -->
+        <div class="bg-white p-3 flex items-center border-b border-gray-200">
+          <input type="checkbox" class="mr-3" />
+          <img src="./assets/images/cart/7c5e174d-a677-43a9-90fa-6962fef3f7b5.jpg" alt="Product" class="w-20 h-20 mr-3" />
+          <div class="flex-1">
+            <p>[SẴN GIÁO] Chuột không dây ATK Blazing Sky X1 Ultra / X...</p>
+            <p class="text-gray-500">Phân Loại Hàng: X1 S.Đen</p>
+          </div>
+          <span class="w-24 text-center">₫695.000</span>
+          <div class="w-24 text-center flex justify-center items-center">
+            <button class="border px-2">-</button>
+            <span class="mx-2">1</span>
+            <button class="border px-2">+</button>
+          </div>
+          <span class="w-24 text-center text-orange-600">₫695.000</span>
+          <div class="w-24 text-center">
+            <a href="#" class="text-orange-600 mx-1">Sửa</a>
+            <a href="#" class="text-orange-600 mx-1">Xóa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed Footer -->
+        <div class="bg-white py-3 shadow-md fixed bottom-0 left-0 w-full">
+            <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <input type="checkbox" class="mr-2" />
+                    <span class="mr-3">Chọn Tất Cả (13)</span>
+                    <a href="#" class="text-orange-600 mr-3">Xóa</a>
+                    <a href="#" class="text-orange-600">Lưu vào mục Đã thích</a>
+                </div>
+                <div class="flex flex-col items-end">
+                    <a href="#" class="text-orange-600 mb-2">Chọn Voucher</a>
+                    <div class="flex items-center">
+                        <span class="mr-3">Tổng cộng (0 Sản phẩm): ₫0</span>
+                        <button class="bg-orange-600 text-white px-5 py-2 rounded">Mua Hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
