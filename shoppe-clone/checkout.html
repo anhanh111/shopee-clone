@@ -4,72 +4,146 @@
   <meta charset="UTF-8" />
   <title>Thanh Toán | Shopee Clone</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places"></script>
 </head>
 <body class="bg-gray-100">
 
-  <div class="max-w-4xl mx-auto mt-6 bg-white p-6 rounded shadow">
-    <!-- Địa chỉ người nhận -->
-    <div class="mb-6">
-      <h2 class="text-lg font-semibold text-red-500 mb-2">📍 Địa Chỉ Nhận Hàng</h2>
-      <input id="autocomplete" type="text" placeholder="Nhập địa chỉ nhận hàng"
-        class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-orange-500">
-    </div>
+<div class="max-w-6xl mx-auto mt-6 bg-white p-6 rounded shadow">
+  <h2 class="text-xl font-bold mb-4">🛒 Giỏ Hàng</h2>
+
+  <!-- Danh sách sản phẩm -->
+  <div id="product-list" class="space-y-4">
 
     <!-- Sản phẩm -->
-    <div class="mb-6 border-t pt-4">
-      <h3 class="text-lg font-semibold mb-2">🛍️ Sản phẩm</h3>
-      <div class="flex items-start space-x-4">
-        <img src="https://down-vn.img.susercontent.com/file/vn-11134201-7qukw-lfn29hy8jlzrc4" class="w-20 h-20 rounded border">
-        <div class="flex-1">
-          <p class="font-medium">Quần đùi Choice XMNL_07 đùi chun thêu</p>
-          <p class="text-sm text-gray-500">Loại: Kem, Size: L</p>
-          <p class="mt-2 text-orange-600 font-semibold">₫36.630</p>
+    <div class="product-item flex items-center border-b pb-4 gap-4" data-price="39000">
+      <img src="https://down-vn.img.susercontent.com/file/vn-11134201-7qukw-lfn29hy8jlzrc4" class="w-20 h-20 rounded border" />
+      <div class="flex-1">
+        <p class="font-medium">Áo Thun Nam Dài Tay Chống Nắng</p>
+        <div class="mt-1 text-sm">
+          <label>Loại:</label>
+          <select class="type-select border rounded px-2 py-1 ml-1">
+            <option value="Xám">Xám</option>
+            <option value="Trắng">Trắng</option>
+            <option value="Đen">Đen</option>
+          </select>
+
+          <label class="ml-4">Size:</label>
+          <select class="size-select border rounded px-2 py-1 ml-1">
+            <option value="M">M</option>
+            <option value="L" selected>L</option>
+            <option value="XL">XL</option>
+          </select>
         </div>
+      </div>
+
+      <div class="w-24 text-right">
+        <p>₫<span class="unit-price">39,000</span></p>
+      </div>
+
+      <div class="w-24">
+        <input type="number" value="1" min="1" class="quantity-input w-16 border rounded px-2 py-1" />
+      </div>
+
+      <div class="w-32 text-right font-semibold text-orange-600">
+        ₫<span class="item-total">39,000</span>
       </div>
     </div>
 
-    <!-- Phương thức vận chuyển -->
-    <div class="mb-6">
-      <h3 class="text-lg font-semibold mb-2">🚚 Phương thức vận chuyển</h3>
-      <p class="text-sm">Choice - Nhanh (dự kiến 7 Tháng 6 - 10 Tháng 6)</p>
-      <p class="text-gray-700 mt-1">Phí vận chuyển: <strong>₫25.000</strong></p>
-    </div>
+  </div>
 
-    <!-- Phương thức thanh toán -->
-    <div class="mb-6">
-      <h3 class="text-lg font-semibold mb-2">💳 Phương thức thanh toán</h3>
-      <select class="w-full px-4 py-2 border border-gray-300 rounded">
-        <option>Thanh toán khi nhận hàng (COD)</option>
-        <option>Ví ShopeePay</option>
-        <option>Thẻ ATM nội địa (Internet Banking)</option>
-        <option>Thẻ tín dụng/ghi nợ</option>
-        <option>Chuyển khoản ngân hàng</option>
-      </select>
-    </div>
-
-    <!-- Tổng tiền -->
-    <div class="flex justify-between items-center mb-4 border-t pt-4">
-      <span class="text-lg font-semibold">Tổng thanh toán:</span>
-      <span class="text-2xl font-bold text-orange-600">₫61.630</span>
-    </div>
-
-    <!-- Đặt hàng -->
-    <button class="w-full bg-orange-500 text-white font-semibold py-3 rounded hover:bg-orange-600">
-      Đặt Hàng
+  <!-- Nút thêm sản phẩm -->
+  <div class="mt-4">
+    <button id="add-product" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">
+      Thêm Sản Phẩm
     </button>
   </div>
 
-  <script>
-    function initAutocomplete() {
-      const input = document.getElementById('autocomplete');
-      const autocomplete = new google.maps.places.Autocomplete(input, {
-        types: ['geocode'],
-        componentRestrictions: { country: 'vn' }
-      });
-    }
+  <!-- Tổng thanh toán -->
+  <div class="flex justify-end items-center border-t pt-4 mt-4">
+    <span class="text-lg font-semibold mr-4">Tổng thanh toán:</span>
+    <span class="text-2xl font-bold text-orange-600" id="total-price">₫39,000</span>
+  </div>
 
-    google.maps.event.addDomListener(window, 'load', initAutocomplete);
-  </script>
+  <!-- Nút đặt hàng -->
+  <div class="mt-6">
+    <button class="w-full bg-orange-500 text-white py-3 rounded font-semibold hover:bg-orange-600">
+      Đặt Hàng
+    </button>
+  </div>
+</div>
+
+<script>
+  function formatCurrency(amount) {
+    return amount.toLocaleString('vi-VN');
+  }
+
+  function updateTotals() {
+    let total = 0;
+
+    document.querySelectorAll('.product-item').forEach(item => {
+      const unitPrice = parseInt(item.dataset.price);
+      const quantity = parseInt(item.querySelector('.quantity-input').value) || 1;
+      const itemTotal = unitPrice * quantity;
+
+      item.querySelector('.unit-price').textContent = formatCurrency(unitPrice);
+      item.querySelector('.item-total').textContent = formatCurrency(itemTotal);
+      total += itemTotal;
+    });
+
+    document.getElementById('total-price').textContent = '₫' + formatCurrency(total);
+  }
+
+  // Thêm sản phẩm mới
+  document.getElementById('add-product').addEventListener('click', function() {
+    const productList = document.getElementById('product-list');
+    const newProduct = document.createElement('div');
+    newProduct.className = 'product-item flex items-center border-b pb-4 gap-4';
+    newProduct.dataset.price = '45000'; // Giá mặc định cho sản phẩm mới
+    newProduct.innerHTML = `
+      <img src="https://down-vn.img.susercontent.com/file/vn-11134201-7qukw-lfn29hy8jlzrc4" class="w-20 h-20 rounded border" />
+      <div class="flex-1">
+        <p class="font-medium">Áo Thun Nam Dài Tay Chống Nắng (Mới)</p>
+        <div class="mt-1 text-sm">
+          <label>Loại:</label>
+          <select class="type-select border rounded px-2 py-1 ml-1">
+            <option value="Xám">Xám</option>
+            <option value="Trắng">Trắng</option>
+            <option value="Đen">Đen</option>
+          </select>
+          <label class="ml-4">Size:</label>
+          <select class="size-select border rounded px-2 py-1 ml-1">
+            <option value="M">M</option>
+            <option value="L" selected>L</option>
+            <option value="XL">XL</option>
+          </select>
+        </div>
+      </div>
+      <div class="w-24 text-right">
+        <p>₫<span class="unit-price">45,000</span></p>
+      </div>
+      <div class="w-24">
+        <input type="number" value="1" min="1" class="quantity-input w-16 border rounded px-2 py-1" />
+      </div>
+      <div class="w-32 text-right font-semibold text-orange-600">
+        ₫<span class="item-total">45,000</span>
+      </div>
+    `;
+    productList.appendChild(newProduct);
+
+    // Cập nhật lại sự kiện input cho sản phẩm mới
+    newProduct.querySelector('.quantity-input').addEventListener('input', updateTotals);
+    updateTotals();
+  });
+
+  // Gọi update khi số lượng thay đổi
+  document.addEventListener('input', function(e) {
+    if (e.target.classList.contains('quantity-input')) {
+      updateTotals();
+    }
+  });
+
+  // Cập nhật tổng ban đầu
+  updateTotals();
+</script>
+
 </body>
 </html>
