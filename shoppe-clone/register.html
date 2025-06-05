@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập - Shopee</title>
+    <!-- CDN Tailwind CSS -->
+     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body class="font-sans">
+    <div class="container mx-auto">
+        <div class="tab">
+            <a href="./index.html"><img id="logo_login" src="./assets/images/shopee.png" alt=""></a>
+            <h1 class="title_login">Đăng Ký </h1>
+        </div>
+    </div>
+    <!-- Banner và Form Đăng Nhập -->
+    <div class="banner-bg">
+        <!-- Form Đăng Nhập -->
+        <div class="login-form">
+            <h2 class="text-xl font-bold mb-4 text-center">Đăng ký</h2>
+            <form>
+                <div class="mb-4">
+                    <input type="text" placeholder="Your Name" class="w-full p-2 border rounded" />
+                </div>
+                <div class="mb-4">
+                    <input type="password" placeholder="Password" class="w-full p-2 border rounded" />
+                </div>
+                <button type="submit" class="w-full bg-red-500 text-white p-2 rounded hover:bg-red-600">ĐĂNG KÝ</button>
+                
+            </form>
+            <div class="mt-4 text-center">
+                <span class="text-gray-500">OR</span>
+            </div>
+            <div id="button_bottom" class="social-buttons mt-4">
+                <button class="bg-blue-600 text-white p-2 rounded flex items-center justify-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.294h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                    </svg>
+                    Facebook
+                </button>
+                <button class="bg-red-600 text-white p-2 rounded flex items-center justify-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.545 2.875c-3.906 0-7.083 3.178-7.083 7.082 0 3.695 2.945 6.697 6.596 7.05.456.061.662-.198.662-.44v-1.515c-2.697.586-3.266-1.302-3.266-1.302-.442-1.122-1.079-1.421-1.079-1.421-.883-.603.067-.591.067-.591 1.075.075 1.64 1.104 1.64 1.104.956 1.637 2.506 1.165 3.118.89.096-.692.375-1.165.682-1.433-2.387-.272-4.892-1.194-4.892-5.306 0-1.172.418-2.129 1.105-2.88-.111-.272-.478-1.365.105-2.845 0 0 .903-.289 2.962 1.105 1.086-.303 2.25-.448 3.41-.448.937 0 1.875.146 2.755.448 2.058-1.394 2.96-1.105 2.96-1.105.583 1.48.216 2.573.103 2.845.687.751 1.104 1.708 1.104 2.88 0 4.119-2.506 5.033-4.895 5.299.384.33.724.982.724 1.983v2.942c0 .241.206.518.662.44 3.65-.353 6.595-3.355 6.595-7.05 0-3.904-3.178-7.082-7.083-7.082z"/>
+                    </svg>
+                    Google
+                </button>
+            </div>
+            <div class="mt-4 text-center">
+                <span class="text-gray-500 mr-2">Đăng nhập với mã QR</span>
+                <span class="qr-code"></span>
+            </div>
+            <p class="text-center mt-2 text-sm text-gray-500">Bạn mới biết Shopee? <a href="login.html" class="text-black-500">Đăng nhập</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
